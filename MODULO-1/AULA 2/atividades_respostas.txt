@@ -1,0 +1,48 @@
+-----------------------------------------
+Programação Orientada a Objetos - Java
+-----------------------------------------
+
+1. O que é uma classe e para que serve?
+Uma classe é um modelo que define as características (atributos) e comportamentos (métodos) de objetos. Serve como estrutura base para a criação de objetos com propriedades e ações definidas.
+
+2. Como se escreve uma classe em Java?
+public class NomeDaClasse {
+    // atributos e métodos
+}
+
+3. Como se representam as características em uma classe?
+As características são representadas pelos atributos, que são variáveis criadas dentro da classe.
+
+4. Quais tipos de atributos você conhece?
+- int: números inteiros
+- boolean: valores lógicos (true ou false)
+- float: números decimais
+- String: textos (cadeia de caracteres)
+
+5. Qual a regra básica de criação de um método de uma classe?
+Um método deve conter:
+- Modificador de acesso (ex: public)
+- Tipo de retorno (ou void, se não retornar nada)
+- Nome do método
+- Parênteses (podem conter parâmetros ou não)
+- Bloco de código entre chaves {}
+
+Exemplo:
+public void ligar() {
+    System.out.println("Carro ligado.");
+}
+
+6. Pra que servem os métodos set e get?
+- Método set: define ou altera o valor de um atributo.
+- Método get: recupera ou acessa o valor de um atributo.
+
+Exemplo:
+private String cor;
+
+public void setCor(String novaCor) {
+    cor = novaCor;
+}
+
+public String getCor() {
+    return cor;
+}
