@@ -14,7 +14,7 @@ export class Relatorio {
     }
 
     gerarResumoGeral(): void {
-        console.log(" --- RELATÓRIO GERAL DA BIBLIOTECA --- ");
+        console.log("\n--- RELATÓRIO GERAL DA BIBLIOTECA --- ");
         console.log(`Total de livros cadastrados: ${this.livros.length}`);
         console.log(`Usuários cadastrados: ${this.usuarios.length}`);
         console.log(`Empréstimos registrados: ${this.emprestimos.length}`);

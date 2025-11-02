@@ -17,7 +17,7 @@ export class Multa {
     }
 
     exibirMulta(): void {
-        console.log(` Multa registrada para ${this.usuario.nome}:`);
+        console.log(`\n Multa registrada para ${this.usuario.nome}:`);
         console.log(`Livro: ${this.livro.titulo}`);
         console.log(`Motivo: ${this.motivo}`);
         console.log(`Valor: R$ ${this.valor.toFixed(2)}`);
