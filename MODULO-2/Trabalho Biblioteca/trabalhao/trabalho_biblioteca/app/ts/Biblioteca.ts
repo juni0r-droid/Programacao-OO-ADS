@@ -24,3 +24,4 @@ relatorio1.gerarResumoGeral();
 //multa
 let multa1 = new Multa(aluno1, livro1, "veio sem uma página", 18.00);
 multa1.exibirMulta();
+
