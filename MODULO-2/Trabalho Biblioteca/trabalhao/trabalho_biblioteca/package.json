@@ -1,0 +1,24 @@
+{
+  "name": "biblioteca",
+  "version": "1.0.0",
+  "description": "Sistema de biblioteca em TypeScript com testes unitários usando Jest",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "typescript",
+    "biblioteca",
+    "jest",
+    "poo"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jest": "^30.0.0",
+    "jest": "^30.2.0",
+    "ts-jest": "^29.4.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}

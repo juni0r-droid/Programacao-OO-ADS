@@ -1,0 +1,14 @@
+# Dependências
+node_modules/
+
+# Compilados
+app/js/
+dist/
+
+# Logs e temporários
+*.log
+*.tmp
+
+# Configurações do sistema
+.DS_Store
+Thumbs.db
