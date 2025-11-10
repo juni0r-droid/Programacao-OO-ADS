@@ -34,7 +34,6 @@ var __importStar = (this && this.__importStar) || (function () {
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Biblioteca = void 0;
-const Livro_1 = require("./Livro");
 const Emprestimos_1 = require("./Emprestimos");
 const Multas_1 = require("./Multas");
 const Relatorio_1 = require("./Relatorio");
@@ -98,9 +97,13 @@ class Biblioteca {
         fs.writeFileSync("dados.json", JSON.stringify(dados, null, 2));
     }
     carregarDados() {
-        if (fs.existsSync("dados.json")) {
-            const dados = JSON.parse(fs.readFileSync("dados.json", "utf8"));
-            this.livros = dados.livros.map((l) => new Livro_1.Livro(l.titulo, l.autor, l.paginas, l.editora, l.isbn, l.qtdDisponivel));
+        const caminho = "dados.json";
+        if (fs.existsSync(caminho)) {
+            const dados = JSON.parse(fs.readFileSync(caminho, "utf8"));
+            this.livros = dados.livros || [];
+            this.usuarios = dados.usuarios || [];
+            this.emprestimos = dados.emprestimos || [];
+            this.multas = dados.multas || [];
         }
     }
 }

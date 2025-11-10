@@ -22,3 +22,19 @@ relatorio1.gerarResumoGeral();
 
 const multa1 = new Multa(aluno1, livro1, "Veio sem uma página", 18.00);
 multa1.exibirMulta();
+
+//biblioteca
+import { Biblioteca } from "./Biblioteca";
+
+const biblioteca = new Biblioteca();
+biblioteca.carregarDados(); // Carrega dados anteriores
+
+// Adiciona novos registros, empréstimos etc.
+biblioteca.adicionarLivro(livro1);
+biblioteca.cadastrarUsuario(aluno1);
+biblioteca.emprestarLivro(aluno1, livro1);
+biblioteca.aplicarMulta(aluno1, livro1, "Veio sem uma página", 18.00);
+
+
+biblioteca.salvarDados(); // Salva as mudanças
+console.log("Dados carregados:", biblioteca);
