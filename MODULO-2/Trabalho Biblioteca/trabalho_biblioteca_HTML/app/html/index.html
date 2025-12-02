@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="../js/Cite.js"></script>
+    <title>Cite da Biblioteca</title>
+
+
+</head>
+<body>
+    <p class="paragrafo">Biblioteca</p>
+    <br>
+
+    <form class="login">
+        <h2>
+        <li> Login</li>
+        </h2>
+        <input type="text" id="nome" placeholder="Digite seu nome...">
+        <br><br>
+        <input type="text" id="senha" placeholder="digite sua senha...">
+        <br><br>
+        <button type="button" id="enviar">Enviar</button>
+        <br>
+        <p id="resultado"></p>
+    </form>
+
+    <br>
+    <h2 class="titulo_tabela">Tabela de Lívros</h2>
+
+    <table border="2px">
+        <th>Titulo</th>
+        <th>Autor</th>
+        <th>Capítulos</th>
+        <th>Editora</th>
+        <th>ISBN</th>
+        <th>Quantidade disponível</th>
+        <th>Status</th>
+
+        <tr>
+            <td>O Iluminado</td>
+            <td>Stephen King</td>
+            <td>39</td>
+            <td>Suma</td>
+            <td>ISBN-13. 978-8581050485</td>
+            <td>5</td>
+            <td>Disponível</td>
+        </tr>
+        <tr>
+            <td>O Hobbit</td>
+            <td>J.R.R. Tolkier</td>
+            <td>19</td>
+            <td>HarperCollins Brasil</td>
+            <td>ISBN-10. 8578277104</td>
+            <td>4</td>
+            <td>Disponível</td>
+        </tr>
+    </table>
+    <br><br>
+
+    <form class="emprestar_livro">
+        <h2>Escolha o livro que deseja pegar emprestado</h2>
+        <input type="text" class="emprestimo" id="livro" placeholder="  Digite o nome do livro que deseja pegar...">
+        <br><br>
+        <button type="button" id="emprestar">Emprestar</button>
+        <br>
+        <p id="livro_pego"></p>
+    </form>
+</body>
+</html>
