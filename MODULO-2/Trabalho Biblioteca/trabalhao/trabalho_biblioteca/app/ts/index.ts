@@ -7,7 +7,8 @@ import { Relatorio } from "./Relatorio";
 import { Livro } from "./Livro";
 
 const aluno1 = new AlunoGraduado("João", 1, 1);
-const livro1 = new Livro("O Iluminado", "Stephen King", 122, "Suma", "ISBN-10", 1);
+let livro1 = new Livro("O Iluminado", "Stephen King", 39, "Suma", "ISBN-13. 978-8581050485", 5);
+let livro2 = new Livro("O Hobbit", "J.R.R. Tolkien", 19,"HarperCollins Brasil", "ISBN-10. 8578277104", 4)
 const emprestimo1 = new Emprestimos(aluno1, livro1);
 const relatorio1 = new Relatorio([livro1], [aluno1], [emprestimo1]);
 
