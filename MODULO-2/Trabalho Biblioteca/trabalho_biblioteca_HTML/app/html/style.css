@@ -1,0 +1,36 @@
+body {
+    background-color: rgb(237, 244, 247); /*Definir cor do fundo*/
+}
+
+.paragrafo {
+    text-align: center;
+    font-size: 45px;/*define o tamanho da fonte*/
+    color: black;
+}
+
+.login{
+    text-align: center;
+}
+
+.titulo_tabela{
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-color: rgb(8, 4, 4);
+    text-align: center;
+}
+
+td {
+    width: 14.28%;
+    text-align: center;
+}
+
+.emprestar_livro{
+    text-align: center;
+}
+
+.emprestimo{
+    width: 20%;
+}
