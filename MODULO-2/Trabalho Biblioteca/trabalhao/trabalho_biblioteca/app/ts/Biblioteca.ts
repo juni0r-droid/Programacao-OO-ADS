@@ -1,27 +1,84 @@
-import { Usuario, Professor, AlunoGraduado, AlunoIntercambio } from "./Usuario";
+import { Usuario } from "./Usuario";
+import { Livro } from "./Livro";
 import { Emprestimos } from "./Emprestimos";
 import { Multa } from "./Multas";
 import { Relatorio } from "./Relatorio";
-import { Livro } from "./Livro";
+import * as fs from "fs";
 
-// Novo Alunos:
-let aluno1 = new AlunoGraduado("João", 1, 1);
-// Novo livro:
-let livro1 = new Livro("o iluminado", "Stephen King", 122, "Suma", "ISBN-10", 1);
-// Novo Emprestimo:
-let emprestimo1 = new Emprestimos(aluno1, livro1);
-// Novo relatorio
-let relatorio1 = new Relatorio([livro1], [aluno1], [emprestimo1]);
-//empresta livro
-livro1.emprestar()
-//gerar relatorio
-relatorio1.gerarResumoGeral();
-relatorio1.listarLivrosEmprestados();
-//devolver livro
-emprestimo1.devolverLivro();
+export class Biblioteca {
+  private livros: Livro[] = [];
+  private usuarios: Usuario[] = [];
+  private emprestimos: Emprestimos[] = [];
+  public multas: Multa[] = [];
 
-relatorio1.gerarResumoGeral();
-//multa
-let multa1 = new Multa(aluno1, livro1, "veio sem uma página", 18.00);
-multa1.exibirMulta();
+  //  Adicionar livro
+  adicionarLivro(livro: Livro): void {
+    this.livros.push(livro);
+  }
 
+  // Cadastrar usuário
+  cadastrarUsuario(usuario: Usuario): void {
+    this.usuarios.push(usuario);
+  }
+
+  //  Consultar estoque (lista de livros disponíveis)
+  consultarEstoque(): Livro[] {
+    return this.livros;
+  }
+
+  //  Emprestar livro
+  emprestarLivro(usuario: Usuario, livro: Livro): void {
+  try {
+    const emprestimo = new Emprestimos(usuario, livro);
+    this.emprestimos.push(emprestimo);
+    console.log(`${usuario.nome} emprestou ${livro.titulo}`);
+  } catch (e) {
+    console.log((e as Error).message);
+  }
+}
+
+
+  //  Devolver livro
+  devolverLivro(usuario: Usuario, livro: Livro): void {
+    const emprestimo = this.emprestimos.find(
+      (e) => e.usuario === usuario && e.livro === livro
+    );
+
+    if (emprestimo) {
+      emprestimo.devolverLivro();
+      livro._qtdDisponivel++;
+    }
+  }
+
+  //  Aplicar multa
+  aplicarMulta(usuario: Usuario, livro: Livro, motivo: string, valor: number): void {
+    const multa = new Multa(usuario, livro, motivo, valor);
+    this.multas.push(multa);
+  }
+
+  //  Relatórios (exemplo simples)
+  gerarRelatorio(): void {
+    const relatorio = new Relatorio(this.livros, this.usuarios, this.emprestimos);
+    relatorio.gerarResumoGeral();
+  }
+
+  //  Persistência em JSON
+  salvarDados(): void {
+    const dados = {
+      livros: this.livros,
+      usuarios: this.usuarios,
+      emprestimos: this.emprestimos,
+      multas: this.multas,
+    };
+    fs.writeFileSync("dados.json", JSON.stringify(dados, null, 2));
+  }
+
+  carregarDados(): void {
+    if (fs.existsSync("dados.json")) {
+      const dados = JSON.parse(fs.readFileSync("dados.json", "utf8"));
+      this.livros = dados.livros.map(
+        (l: any) => new Livro(l.titulo, l.autor, l.paginas, l.editora, l.isbn, l.qtdDisponivel)
+      );
+    }
+  }
+}

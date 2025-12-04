@@ -1,0 +1,71 @@
+{
+  "livros": [
+    {
+      "_status": "emprestado"
+    },
+    {
+      "_status": "emprestado"
+    },
+    {
+      "_titulo": "O Iluminado",
+      "_autor": "Stephen King",
+      "_capitulos": 122,
+      "_editora": "Suma",
+      "_isbn": "ISBN-10",
+      "_qtdDisponivel": 0,
+      "_status": "disponível"
+    }
+  ],
+  "usuarios": [
+    {
+      "nome": "João",
+      "id": 1,
+      "limiteEmprestimos": 2,
+      "ra": 1
+    }
+  ],
+  "emprestimos": [
+    {
+      "usuario": {
+        "nome": "João",
+        "id": 1,
+        "limiteEmprestimos": 2,
+        "ra": 1
+      },
+      "livro": {
+        "_titulo": "O Iluminado",
+        "_autor": "Stephen King",
+        "_capitulos": 122,
+        "_editora": "Suma",
+        "_isbn": "ISBN-10",
+        "_qtdDisponivel": 0,
+        "_status": "disponível"
+      },
+      "dataEmprestimo": "2025-11-10T14:47:47.449Z",
+      "status": "Ativo",
+      "dataDevolucaoPrevista": "2025-11-25T14:47:47.449Z"
+    }
+  ],
+  "multas": [
+    {
+      "usuario": {
+        "nome": "João",
+        "id": 1,
+        "limiteEmprestimos": 2,
+        "ra": 1
+      },
+      "livro": {
+        "_titulo": "O Iluminado",
+        "_autor": "Stephen King",
+        "_capitulos": 122,
+        "_editora": "Suma",
+        "_isbn": "ISBN-10",
+        "_qtdDisponivel": 0,
+        "_status": "disponível"
+      },
+      "motivo": "Veio sem uma página",
+      "valor": 18,
+      "data": "2025-11-10T14:47:47.449Z"
+    }
+  ]
+}
